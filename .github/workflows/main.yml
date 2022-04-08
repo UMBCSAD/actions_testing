@@ -37,6 +37,7 @@ jobs:
           
   deploy:
     runs-on: self-hosted
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
       - name: clear server directory
