@@ -41,3 +41,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: copy code to server directory
         run: cp -r /home/nikola/actions-runner/_work/actions_testing/actions_testing /var/www/html
+      - name: fix file path
+        run: mv /var/www/html/actions_testing/* /var/www/html/
