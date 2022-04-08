@@ -45,3 +45,10 @@ jobs:
         run: cp -r /home/nikola/actions-runner/_work/actions_testing/actions_testing /var/www/html
       - name: fix file path
         run: mv /var/www/html/actions_testing/* /var/www/html/
+      - name: Webhook Action
+        uses: joelwmale/webhook-action@2.1.0
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          #headers: '{"repository": "joelwmale/webhook-action"}'
+          body: '{"username": "github!!", "content": "new deployment completed!"}'
+
