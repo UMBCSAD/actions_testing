@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: clear server directory
-        run: rm -rf /var/www/html/
+        run: rm -rf /var/www/html/{*,.*}; echo
       - name: copy code to server directory
         run: cp -r /home/nikola/actions-runner/_work/actions_testing/actions_testing /var/www/html
       - name: fix file path
